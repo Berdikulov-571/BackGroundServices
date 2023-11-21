@@ -15,6 +15,10 @@ namespace BackGroundService
             {
                 // Errorlarni ignore qilib yuboradi
                 options.BackgroundServiceExceptionBehavior = BackgroundServiceExceptionBehavior.Ignore;
+                // Agar shu vaqt ichida dastur ishga tushmasa cancel qilib yuboradi
+                options.StartupTimeout = TimeSpan.FromSeconds(10);
+                // Agar shu vaqt ichida dastur o'chmasa cancel qilib yuboradi
+                options.ShutdownTimeout = TimeSpan.FromSeconds(10);
             });
 
             builder.Services.AddControllers();
