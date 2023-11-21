@@ -11,7 +11,7 @@ namespace BackGroundService
 
 
             // Registration Hosted Services
-            builder.Services.AddHostedService<HostedLifeCycleService>();
+            builder.Services.AddHostedService<HostedService>();
 
             // Configuration Our Hosted Services
             builder.Services.Configure<HostOptions>(options =>
@@ -19,9 +19,12 @@ namespace BackGroundService
                 // Errorlarni ignore qilib yuboradi
                 options.BackgroundServiceExceptionBehavior = BackgroundServiceExceptionBehavior.Ignore;
                 // Agar shu vaqt ichida dastur ishga tushmasa cancel qilib yuboradi
-                options.StartupTimeout = TimeSpan.FromSeconds(10);
+                //options.StartupTimeout = TimeSpan.FromSeconds(10);
                 // Agar shu vaqt ichida dastur o'chmasa cancel qilib yuboradi
-                options.ShutdownTimeout = TimeSpan.FromSeconds(10);
+                //options.ShutdownTimeout = TimeSpan.FromSeconds(10);
+
+                options.ServicesStartConcurrently = true;
+                options.ServicesStopConcurrently = true;
             });
 
             builder.Services.AddControllers();

@@ -2,16 +2,16 @@
 {
     public class HostedService : IHostedService
     {
-        public Task StartAsync(CancellationToken cancellationToken)
+        public async Task StartAsync(CancellationToken cancellationToken)
         {
+            await Task.Delay(10000);
             Console.WriteLine("StartAsync");
-            return Task.CompletedTask;
         }
 
-        public Task StopAsync(CancellationToken cancellationToken)
+        public async Task StopAsync(CancellationToken cancellationToken)
         {
+            await Task.Delay(10000);
             Console.WriteLine("StopAsync");
-            return Task.CompletedTask;
         }
     }
 }
