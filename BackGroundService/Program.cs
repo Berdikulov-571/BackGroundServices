@@ -9,8 +9,11 @@ namespace BackGroundService
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
+            // Registration Hosted Services
             builder.Services.AddHostedService<HostedLifeCycleService>();
 
+            // Configuration Our Hosted Services
             builder.Services.Configure<HostOptions>(options =>
             {
                 // Errorlarni ignore qilib yuboradi
