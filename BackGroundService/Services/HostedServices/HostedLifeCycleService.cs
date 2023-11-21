@@ -3,10 +3,6 @@ namespace BackGroundService.Services.HostedServices
 {
     public class HostedLifeCycleService : IHostedLifecycleService
     {
-        public HostedLifeCycleService()
-        {
-            
-        }
         
         public Task StartingAsync(CancellationToken cancellationToken)
         {
@@ -43,6 +39,5 @@ namespace BackGroundService.Services.HostedServices
             Console.WriteLine("StoppedAsync");
             return Task.CompletedTask;
         }
-
     }
 }
