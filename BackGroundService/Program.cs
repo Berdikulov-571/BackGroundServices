@@ -23,6 +23,7 @@ namespace BackGroundService
                 // Agar shu vaqt ichida dastur o'chmasa cancel qilib yuboradi
                 //options.ShutdownTimeout = TimeSpan.FromSeconds(10);
 
+                // Bu start Functiondagi kutishni olib tashlaydi yani ignore qilib yuboradi
                 options.ServicesStartConcurrently = true;
                 options.ServicesStopConcurrently = true;
             });
